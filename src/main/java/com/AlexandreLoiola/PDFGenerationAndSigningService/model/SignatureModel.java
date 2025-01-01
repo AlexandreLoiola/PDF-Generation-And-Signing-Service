@@ -1,5 +1,6 @@
 package com.AlexandreLoiola.PDFGenerationAndSigningService.model;
 
+import com.AlexandreLoiola.PDFGenerationAndSigningService.enums.SignatureType;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 import java.util.UUID;
@@ -22,7 +23,7 @@ public class SignatureModel {
     private UserModel user;
 
     @Column(nullable = false, length = 50)
-    private String signatureType;
+    private SignatureType signatureType;
 
     @Lob
     @Column(nullable = false)

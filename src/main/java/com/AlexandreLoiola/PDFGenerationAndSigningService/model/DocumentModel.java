@@ -1,5 +1,6 @@
 package com.AlexandreLoiola.PDFGenerationAndSigningService.model;
 
+import com.AlexandreLoiola.PDFGenerationAndSigningService.enums.DocumentStatus;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -31,7 +32,7 @@ public class DocumentModel {
     private byte[] pdfContent;
 
     @Column(nullable = false, length = 50)
-    private String status;
+    private DocumentStatus status;
 
     @Column(nullable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private LocalDateTime createdAt = LocalDateTime.now();
